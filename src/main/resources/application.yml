@@ -3,20 +3,42 @@ spring:
   application:
     name: 04_EComm-Monolith
 
-  h2:
-    console:
-      enabled: true
-
   datasource:
-    url: jdbc:h2:mem:test
+    url:  jdbc:postgresql://localhost:5432/ecomdb
+    username: sayan
+    password: root
 
   jpa:
+    database: postgresql
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 
-## to show all actuator  endpoint
+
+
+
+
+#-------------------------- For H2 database configuration
+#  h2:
+#    console:
+#      enabled: true
+#
+#  datasource:
+#    url: jdbc:h2:mem:test
+#
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create
+
+
+
+
+
+
+## ----------------------- to show all actuator  endpoint
 #management:
 #  endpoints:
 #    web:
